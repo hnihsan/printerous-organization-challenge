@@ -13,4 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('organization', 'Organizations\Find');
+Route::get('person/{id}', 'Persons\All');
 

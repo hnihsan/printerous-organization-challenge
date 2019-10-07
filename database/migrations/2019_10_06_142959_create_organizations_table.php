@@ -21,13 +21,14 @@ class CreateOrganizationsTable extends Migration
             $table->string('website');
             $table->string('logo')->nullable();
             $table->integer('user_id',false,true);
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onUpdate('cascade')
-                ->onDelete('restrict');
+                ->onDelete('cascade');
         });
     }
 

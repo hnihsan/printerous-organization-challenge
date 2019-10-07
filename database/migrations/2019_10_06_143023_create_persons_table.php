@@ -21,12 +21,13 @@ class CreatePersonsTable extends Migration
             $table->string('avatar')->nullable();
             $table->integer('organization_id',false,true);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('organization_id')
                 ->references('id')
                 ->on('organizations')
                 ->onUpdate('cascade')
-                ->onDelete('restrict');
+                ->onDelete('cascade');
         });
     }
 

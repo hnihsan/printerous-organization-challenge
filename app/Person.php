@@ -10,4 +10,8 @@ class Person extends Model
     protected $fillable = [
         'name', 'email', 'phone', 'avatar', 'organization_id'
     ];
+
+    public function organization(){
+        return $this->belongsTo(Organization::class, 'organization_id', 'id');
+    }
 }
